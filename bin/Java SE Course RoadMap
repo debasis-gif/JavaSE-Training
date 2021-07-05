@@ -1,0 +1,66 @@
+Java Standard Edition Course RoadMap
+====================================
+1. 	Java Intro
+2. 	How to use Eclipse
+3. 	Getting Started
+4. 	How Java works
+5. 	Variable in Java
+6. 	Working with Variables
+7. 	Primitive Data Types in Java
+8. 	Naming Convention in Java
+9. 	Arithmetic Operators in Java
+10. If-Else Selection statements
+11. While | For | Iteration Statement | Loops
+12.	Nested Loops | Iteration Statement
+13. Break & Continue Statements
+14. Classes & Objects (OOPS concepts introduction)
+15. Constructor in Java
+16. This keyword
+17. Method & Constructor overloading
+18. Static keyword
+19. Inner Class
+20. Array theory
+21.	Array 1D, 2D, Jagged Array
+22. Enhanced For Loop 
+23. Varargs
+24. Inheritance
+25. Super Method
+26. Multiple Inheritance in Java (Check Interface topic)
+27. Method Overriding | Super Keyword
+28. Dynamic Method Dispatch
+29. Encapsulation
+30. Wrapper Class | AutoBoxing
+31. Abstract Keyword
+32. Final Keyword
+33. Interface why and what
+34. More about Interface (Check Multiple Inheritance issue demo)
+35. Anonymous Inner Class 
+36. Anonymous class with Interface (check with Interface demo)
+37. Functional Interface | Lambda Expression
+38. Default method in Interface
+39. Multiple Inheritance issue with Interface
+40. Static method in Interface
+41. Package
+42. Access Modifiers
+43. Exception Handling Try Catch Finally
+44. Multiple Catch blocks
+45. Checked Exception | Finally Block
+46. Exception handling Try with resource
+47. User Defined Exception
+48. User input using Scanner
+49. MultiThreading in Java theory
+50. Thread Class
+51. MultiThreading Runnable Interface
+52. Lambda Expression
+53. Thread Priority
+54. Synchronized Keyword
+55. Collection & Generics 
+56. Iterator Interface
+57. List Interface
+58. Generics with List
+59. Collections Class
+60. Comparator Interface
+61. Comparable Interface
+62. Set Interface
+63. Map Interface 
+===============================================================

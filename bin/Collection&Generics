@@ -1,0 +1,98 @@
+// Collection & Generics
+
+collection - it is a concept, when we speak about the topic or subject
+Collection - it is an Interface, when we speak about the elements etc
+Collections - it is a Class 
+
+If we talk about a list of 5 elements we think of array in this form:
+
+	int n[] = new int[5];
+
+But problem here is the size is fixed, whereas we often have a need of dynamic container of elements
+which will automatically expand or shrink as elements are added or removed
+	
+Here we need to use collection
+
+	The hierarchy ....
+	ArrayList (Class implements) -> List (Interface extends) -> Collection (Interface)
+	
+	Collection values = new ArrayList()  // Reference of Interface and instantiate an Object 
+	values.add(5);						 // ArrayList which is a class that implements Collection indirectly
+	values.add(6);						 // Because ArrayList Implements List which is an Interface 
+	....								 // Which extends Collection Interface
+	values.add("Debasis");				 // This is because values is an object and object can add any data type				
+	
+	Array is fast than Collection, so use Array when the size is known and fixed
+	
+	But, if we want to be specific for the data type of the Collection, we need to use <Generics>
+	Like <Integer>, <Float>, <String>
+	
+	Collection<Integer> values = new ArrayList<Integer>();   // This how we use Generics
+	values.add("Debasis"); 				// Wrong
+	
+	Angular brackets "<>" are used because all other brackets are already used (), {}, []
+	
+	Collection was from version 1.2
+	Generics was from version 1.5
+	Generics without mention of type on RHS from version 1.7
+	eg:- Collection<Integer> values = new ArrayList<>();
+	
+Collection does NOT work with Index no.
+	So, we cannot add elements in between or delete elements from a Collection
+
+So, to use Index no. we need to use List which has some extra features as it extends Collection
+	List<Integer> values = new ArrayList<Integer>();
+
+We can use Set as Interface and a Class HashSet() which implements Set
+	Set<Integer> values = new HashSet<>();
+	
+	Difference between List and Set is that :-
+	* List can have duplicate values, but Set cannot have duplicate
+	  Set will have unique values/elements
+	* List have sequence of elements for listing or fetching, whereas elements in Set are fetched in random 
+	
+	Instead of using HashSet we can use TreeSet
+	Set<Integer> values = new TreeSet<>();
+	
+	Difference between HashSet and TreeSet:
+	* Unlike HashSet the values fetched from TreeSet is in ordered/sorted (ascending) format
+	
+	Map unlike List will have Key, Value pair instead of Index no. of List
+	Map<K,V>
+	Map<Integer, String> m = new HashMap<>();   // Map interface reference and object class HashMap instantiated
+												// HashMap is Synchronized, Thread Safe implementation
+	Map<Integer, String> m = new HashTable<>(); // Map interface reference and object class HashTable instantiated
+												// HashMap is un-Synchronized, Thread unsafe implementation
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 

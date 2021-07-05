@@ -1,0 +1,102 @@
+To zoom-in the screen <CTRL>++ to zoom-out <CTRL>-- 
+Packages
+========
+Classification and storage of classes in folders
+for example: 
+	* All the Java I/O files/classes are put in Java.io package -> BufferedInputSystem, File, PrintWriter
+	* All the network related classes and interfaces will be in Java.net package -> Socket, URL, ServerSocket
+	* All the JDBC related classes and interfaces will be in the -> ResultSet(Interface), DriverManager, TimeStamp
+
+Think of how we organize our files and folders in our PC. The Music files and their classifications, Photo Files and their event wise classification,
+we organize in folders to enable easy search and access -> logical Organization helps
+
+Naming of package
+----------------
+	* It should be unique and no one else should be using it. Like java.io
+	* Package name should be mirror of your Domain name - e.g. if domain name is "google.com" then package name should be "com.google"
+	* pcsglobal.com is domain name, so package name should be com.pcsglobal which cannot be accessed or owned by anyone.
+	* For Android, Maven projects it is mandatory to have unique package names
+	* A package can have sub packages - that is package "com.pcsglobal" can have a package inside by name "com.pcsglobal.test"
+	* If I want to have all the classes or interfaces under test package then I have to mention the package name as "com.pcsglobal.test.*"
+	* If I want to have all the classes or interfaces under "com.pcsglobal" then I have to mention the package name as "com.pcsglobal.*"
+	
+
+Access Modifiers
+================
+ * In Java we do not have access specifiers (in C++) we have access modifiers
+ * Eg. private, public, abstract, final, protected
+ * CLASS -> can use public, final, abstract
+ * CLASS -> cannot use private, protected
+ * class Abc (default if public is not mentioned)
+ * public class Abc
+ 	
+ 	private class A
+ 	{
+ 	
+ 	}   Error: Illegal modifier for the class A; only public, abstract & final are permitted
+ 
+ Example 1
+ ---------	
+ 	package com.abc;
+ 	class A    // default modifier
+ 	{
+ 	
+ 	}
+ 	
+ 	package com.abc;
+ 	public class Abc
+ 	{
+ 		public static void main(String[] args)
+ 		{
+ 			A obj = new A();
+ 		}
+ 	}
+ 	
+ 	Note: both the classes are in the same package hence not getting any error
+ 	
+ 	If we change package for class A to com.abcd, then it encounters an ERROR: class not visible
+ 	It can be resolved by mentioning "public" to class A, so that it can be accessed outside the package
+ 	
+  	package com.abcd ;
+ 	public class A    // default modifier
+ 	{
+ 		int i;      // Access modifier is Default
+ 		public int j;   // Access modifier public
+ 	}
+ 	
+ 	package com.abc;
+ 	public class Abc
+ 	{
+ 		public static void main(String[] args)
+ 		{
+ 			A obj = new A();
+ 			obj.i = 8; 		// not visible because the variable i cannot be accessed outside package
+ 			obj.j = 10; 	// no error because the variable j is accessed outside the package as the modifier is public
+ 		}
+ 	}
+ 
+ Example 2
+ ---------	
+ 	package com.abc;													package com.abcd;
+ 	import com.abcd.A;													public class A
+ 	public class Abc													{
+ 	{																	 	public void method1()
+ 		public static void main(String[] args)								{
+ 		{																		method2();
+ 			A obj = new A();												}
+ 			obj.method1();													private void method2()
+ 		}																	{
+ 	}																			System.out.println("inside method2()");
+ 																			}
+ 																		}
+
+Private:  Specific Class
+Default:  Specific Package
+Public:   Any Class or Package
+Protected: Subsiding Class or sub class of a separate Package
+(Check the packages and the classes therein (com.pcsglobal , com.pcsglobal.test))
+ 		
+ 	
+ 	
+ 		
+ 

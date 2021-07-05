@@ -1,0 +1,88 @@
+// MultiThreading in Java Theory
+
+Working on multiple tasks at the same time -> Multi tasking
+
+One process (main process) can be broken down to multiple sub processes - each such sub processes are threads
+
+Octacore (8) CPUs available instead of single core cpu. 
+
+One gets "Exception in thread "main"
+In every Java application there is at least one thread - that is main 
+
+We have a resource hungry process within main, let's say there are 500 array elements and each element needs to be multiplied by 2.
+
+Uses
+-----
+1) Even we have 8 processors unless we specially have main task broken down into 4 sub tasks or maybe main process calling 4 sub 
+processes to utilize multiple CPUs dividing the tasks t1, t2, t3 & t4 in 4 separate threads (to be executed in 4 CPUs) called 
+by main thread, that becomes the main utility of thread division
+
+2) Async task processing in Android
+Eg. Searching for a product in Amazon shop:-
+	* Request goes to server for searching for a product - App is freezed - it will wait for the response, 
+	This should not happen otherwise the application will stop to service your other requests. So an async process happens
+	where the main thread is still available to cater you other services of Amazon, but a child thread is spawned to 
+	service the request 
+	* Response with the requested details will be catered by another thread, while the main thread is still available
+
+3) Web Application
+	* Client ----Request----> Server using Servlet, to process the request and serve response back to the client
+	At the same time there are 5 clients/users who want to access the same Servlet, the application will create 5 servlets 
+	to send requests to the server, 5 different threads for the same Servlet   
+
+4) Gaming
+	* so many activities are happening at the same time in real time, hence it is a big area of multi-threading
+
+	Thread t1 = new Thread();   
+	
+	doing this will not automatically create a multithreading application
+	
+	EG: if we want to multiply each element of an array with 2, we need to create a class like :-
+	
+	class MyThread  extends Thread   // cannot be a simple class it needs to be type Thread hence needs to extend Thread
+	{
+		int[] values = {6,5,1,7,8};
+		public void run()   		// Any thread will need to implement run() method of a extendible Thread class
+		{
+			for (int i=0; i<5; i++)
+			{
+				values[i] = values[i] * 2;
+			}
+		}
+	}
+	
+	* So, the statement Thread t1 = new Thread();   now changes to :-
+	Thread t1 = new MyThread();     // Reference of a Thread but instantiate the object (MyThread class)
+	t1.start;   // you are not needed to call run() by t1.run(); but just need to use start, it will automatically start run() method
+	
+	Methods of Thread
+	-----------------
+	a) run()	b) sleep() // wait for milliseconds c) wait()	d) notify()   e) stop() // should not use it	f) join
+	
+	Eg: if MyClass needs to extend another class and also the Thread() class, since multiple inheritence is not supported :-
+	
+	class A
+	{
+	 	....
+	}
+	
+	class MyThread  extends A implements Runnable   // Runnable is an interface of Thread which has a method run() same as Thread
+	{
+		int[] values = {6,5,1,7,8};
+		public void run()   		
+		{
+			for (int i=0; i<5; i++)
+			{
+				values[i] = values[i] * 2;
+			}
+		}
+	}
+	
+* So, if we have 80 elements in an array for an Octacore m/c we can divide tasks into 8 threads each for processing 10 elements,
+by using multi threading then it becomes more faster to process 80 elements in 8 threads of 10 elements each rather than 
+1 thread for processing 80 elements
+
+
+	
+	
+	
