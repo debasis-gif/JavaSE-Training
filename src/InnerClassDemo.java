@@ -8,7 +8,7 @@ class Outer   // "Outer.class"
 	int a;
 	public void show()
 	{
-		
+		System.out.println("Inside the Outer class show()");
 	}
 	
 	class Inner   // Inner Class within an object class Outer  "Outer$Inner.class"
@@ -32,7 +32,6 @@ public class InnerClassDemo // "InnerClassDemo.class"
 		// Outer.Inner obj1 = new Outer.Inner();  // In case of Static inner class, 
 												  // the Inner class object can be created through Outer class, no object of outer class is required
 		obj1.display();
-
 	}
 
 }
